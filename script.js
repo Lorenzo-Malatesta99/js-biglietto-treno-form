@@ -1,6 +1,7 @@
 // cerchiamo nel documento l'id myForm, gli aggiungiamo un avento al submit del pulsante che attiva la funzione
 document.getElementById("myForm").addEventListener("submit", function (event) {
   // variabili
+  event.preventDefault();
   const userAge = parseInt(document.getElementById("age").value);
   const userKm = parseInt(document.getElementById("km").value);
   const kmPrice = userKm * 0.21;
@@ -27,9 +28,6 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
       2
     )} €`;
   }
-  console.log(userAge);
-  console.log(userKm);
-  console.log();
   // selezioniamo result dall'html e gli inviamo il contenuto di message
   document.getElementById("result").innerText = message;
 });
